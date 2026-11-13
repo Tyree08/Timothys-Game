@@ -1,2 +1,2 @@
-# Outbreak Part 1
-Zombie Game
+# The Last Cure Part 1
+
