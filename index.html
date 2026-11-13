@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LAST STAND: THE OUTBREAK - a 3D survival horror browser game." />
+  <title>LAST STAND: THE OUTBREAK</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-root">
+    <div id="menu" class="screen">
+      <div class="menu-panel">
+        <p class="eyebrow">A SURVIVAL HORROR EXPERIENCE</p>
+        <h1>LAST STAND:<br><span>THE OUTBREAK</span></h1>
+        <p class="tagline">The city has fallen. How long will you last?</p>
+        <div class="menu-options">
+          <label for="character">Choose your survivor</label>
+          <select id="character">
+            <option value="soldier">Military Soldier — tougher survivor</option>
+            <option value="doctor">Former Doctor — better healing</option>
+          </select>
+          <label for="difficulty">Difficulty</label>
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="normal" selected>Normal</option>
+            <option value="hard">Hard</option>
+            <option value="nightmare">Nightmare</option>
+          </select>
+          <button id="start-button" class="primary-button">START NEW GAME</button>
+          <p class="controls-note">WASD move · Mouse look · Shift sprint · Space jump · E collect · Click pulse</p>
+        </div>
+      </div>
+      <div class="menu-footer">DEMO BUILD 0.1 · CITY DISTRICT</div>
+    </div>
+
+    <div id="hud" class="hidden">
+      <div class="hud-top">
+        <div class="hud-brand">LAST STAND <span> / THE OUTBREAK</span></div>
+        <div class="hud-objective">OBJECTIVE: <strong id="objective">Collect 5 supply cases</strong></div>
+      </div>
+      <div class="hud-bottom">
+        <div class="stat-panel">
+          <div class="stat-line"><span>HEALTH</span><strong id="health-value">100</strong></div>
+          <div class="meter"><div id="health-fill" class="meter-fill health-fill"></div></div>
+          <div class="stat-line"><span>STAMINA</span><strong id="stamina-value">100</strong></div>
+          <div class="meter"><div id="stamina-fill" class="meter-fill stamina-fill"></div></div>
+        </div>
+        <div class="mission-panel">
+          <div>SUPPLIES <strong id="supply-count">0 / 5</strong></div>
+          <div>SCORE <strong id="score-value">0</strong></div>
+          <div id="status-message">Find supplies. Avoid the infected.</div>
+        </div>
+      </div>
+      <div id="crosshair">+</div>
+      <div id="interaction-hint"></div>
+    </div>
+
+    <div id="pause-screen" class="screen hidden">
+      <div class="menu-panel compact">
+        <p class="eyebrow">FIELD PAUSED</p>
+        <h2>PAUSED</h2>
+        <button id="resume-button" class="primary-button">RESUME</button>
+        <button id="restart-button" class="secondary-button">RESTART MISSION</button>
+        <button id="menu-button" class="secondary-button">MAIN MENU</button>
+      </div>
+    </div>
+
+    <div id="end-screen" class="screen hidden">
+      <div class="menu-panel compact">
+        <p class="eyebrow" id="end-eyebrow">MISSION REPORT</p>
+        <h2 id="end-title">MISSION COMPLETE</h2>
+        <p id="end-message"></p>
+        <p class="final-score">FINAL SCORE <strong id="final-score">0</strong></p>
+        <button id="play-again-button" class="primary-button">PLAY AGAIN</button>
+        <button id="end-menu-button" class="secondary-button">MAIN MENU</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>
